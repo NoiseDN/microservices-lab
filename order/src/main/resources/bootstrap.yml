@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: Order
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservices?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#    host: eagle.rmq.cloudamqp.com
+#    username: iclcnsiv
+#    password: PuivyPKXprkDmUEMh0sPH3lepJZBRWZi
+#    virtual-host: iclcnsiv
+
+server:
+  port: 8085
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka
