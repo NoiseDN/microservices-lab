@@ -17,14 +17,14 @@ public class GuestController {
     private DinnerService dinnerService;
 
     @PostMapping("/dinner")
-    @HystrixCommand(fallbackMethod = "startDinnerFallback")
+    @HystrixCommand //(fallbackMethod = "startDinnerFallback")
     public Integer startDinner(@RequestBody List<Integer> menuItems) {
         return dinnerService.startDinner(menuItems);
     }
 
-    private Integer startDinnerFallback(List<Integer> menuItems) {
-        return 0;
-    }
+//    private Integer startDinnerFallback(List<Integer> menuItems) {
+//        return 0;
+//    }
 
     @DeleteMapping("/dinner/{tableId}")
     @HystrixCommand

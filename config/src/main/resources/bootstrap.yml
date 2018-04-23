@@ -1,6 +1,11 @@
 spring:
   application:
     name: Config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:NoiseDN/microservices-config.git
 
 server:
   port: 9000
