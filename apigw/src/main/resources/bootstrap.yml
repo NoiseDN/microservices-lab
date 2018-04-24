@@ -2,5 +2,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:9000
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 3
   application:
     name: ApiGw 

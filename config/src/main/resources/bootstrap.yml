@@ -5,9 +5,9 @@ spring:
     config:
       server:
         git:
-#          uri: file:/Users/afilimonov/Projects/Microservices/Labs & Solutions/microservices-config
-#          uri: git@github.com:NoiseDN/microservices-config.git
           uri: https://github.com/NoiseDN/microservices-config.git
+#          uri: file:/Users/noise/Projects/microservices-config-repo
+#          uri: git@github.com:NoiseDN/microservices-config.git
   sleuth:
     enabled: false
   zipkin:
