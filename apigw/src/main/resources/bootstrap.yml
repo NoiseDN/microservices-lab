@@ -3,4 +3,4 @@ spring:
     config:
       uri: http://localhost:9000
   application:
-    name: ApiGw
+    name: ApiGw 
