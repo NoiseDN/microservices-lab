@@ -5,7 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:NoiseDN/microservices-config.git
+          uri: file:/Users/afilimonov/Projects/Microservices/Labs & Solutions/microservices-config
+#          uri: git@github.com:NoiseDN/microservices-config.git
 
 server:
   port: 9000

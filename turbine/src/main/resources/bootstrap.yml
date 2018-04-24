@@ -1,15 +1,6 @@
 spring:
+  cloud:
+    config:
+      uri: http://localhost:9000
   application:
     name: Turbine
-  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
-    host: eagle.rmq.cloudamqp.com
-    username: iclcnsiv
-    password: PuivyPKXprkDmUEMh0sPH3lepJZBRWZi
-    virtual-host: iclcnsiv
-
-server:
-  port: 8001

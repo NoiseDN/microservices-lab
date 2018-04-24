@@ -1,43 +1,6 @@
 spring:
+  cloud:
+    config:
+      uri: http://localhost:9000
   application:
     name: ApiGw
-
-server:
-  port: 8080
-
-zuul:
-  ignored-services: '*'
-  routes:
-    bill:
-      path: /bill/**
-      serviceId: Bill
-      stripPrefix: true
-      sensitiveHeaders: Cookie,Set-Cookie,Authorization
-    guest:
-      path: /guest/**
-      serviceId: Guest
-      stripPrefix: true
-      sensitiveHeaders: Cookie,Set-Cookie,Authorization
-    order:
-      path: /order/**
-      serviceId: Order
-      stripPrefix: true
-      sensitiveHeaders: Cookie,Set-Cookie,Authorization
-    table:
-      path: /table/**
-      serviceId: Table
-      stripPrefix: true
-      sensitiveHeaders: Cookie,Set-Cookie,Authorization
-    dashboard:
-      path: /dashboard/**
-      serviceId: Dashboard
-      stripPrefix: true
-      sensitiveHeaders: Cookie,Set-Cookie,Authorization
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka
-

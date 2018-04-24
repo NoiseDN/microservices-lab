@@ -1,22 +1,6 @@
 spring:
+  cloud:
+    config:
+      uri: http://localhost:9000
   application:
     name: Guest
-  rabbitmq:
-    host: eagle.rmq.cloudamqp.com
-    username: iclcnsiv
-    password: PuivyPKXprkDmUEMh0sPH3lepJZBRWZi
-    virtual-host: iclcnsiv
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
-
-server:
-  port: 8081
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka
