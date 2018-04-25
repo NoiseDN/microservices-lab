@@ -41,12 +41,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <!--<dependencies>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
-        <!--</dependency>-->
-    <!--</dependencies>-->
     <modules>
         <module>guest</module>
         <module>table</module>
