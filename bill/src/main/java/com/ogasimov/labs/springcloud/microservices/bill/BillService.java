@@ -2,6 +2,7 @@ package com.ogasimov.labs.springcloud.microservices.bill;
 
 import com.ogasimov.labs.springcloud.microservices.common.command.AbstractBillCommand;
 import com.ogasimov.labs.springcloud.microservices.common.command.CreateBillCommand;
+import com.ogasimov.labs.springcloud.microservices.common.command.PayBillCommand;
 
 import java.util.List;
 import javax.persistence.EntityNotFoundException;
@@ -26,6 +27,8 @@ public class BillService {
     public void createBill(AbstractBillCommand command) {
         if (command instanceof CreateBillCommand) {
             createBill(command.getTableId(), ((CreateBillCommand) command).getOrderId());
+        } else if (command instanceof PayBillCommand) {
+            payBills(command.getTableId());
         }
     }
 

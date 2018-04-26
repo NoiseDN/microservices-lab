@@ -39,7 +39,7 @@ public class StockService {
             }
             stock.setCount(stock.getCount() - 1);
             stockRepository.save(stock);
-            log.info("Menu item {} was removed from Stock. Remaining stock: ", menuItemId, stock.getCount());
+            log.info("Menu item {} was removed from Stock. Remaining stock: {}", menuItemId, stock.getCount());
         });
 
     }

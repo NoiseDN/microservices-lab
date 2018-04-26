@@ -4,6 +4,7 @@ import com.ogasimov.labs.springcloud.microservices.common.command.AbstractBillCo
 import com.ogasimov.labs.springcloud.microservices.common.command.AbstractOrderCommand;
 import com.ogasimov.labs.springcloud.microservices.common.command.AbstractTableCommand;
 import com.ogasimov.labs.springcloud.microservices.common.command.CreateOrderCommand;
+import com.ogasimov.labs.springcloud.microservices.common.command.FreeTableCommand;
 import com.ogasimov.labs.springcloud.microservices.common.command.OccupyTableCommand;
 import com.ogasimov.labs.springcloud.microservices.common.command.PayBillCommand;
 import com.ogasimov.labs.springcloud.microservices.common.event.FinishDinnerEvent;
@@ -75,6 +76,7 @@ public class DinnerService {
     public void finishDinner(Integer tableId) {
         log.info("Dinner finished for table {}", tableId);
         eventClient.storeEvent(FinishDinnerEvent.builder().tableId(tableId).build());
+        publish(new FreeTableCommand(tableId));
         publish(new PayBillCommand(tableId));
     }
 }
