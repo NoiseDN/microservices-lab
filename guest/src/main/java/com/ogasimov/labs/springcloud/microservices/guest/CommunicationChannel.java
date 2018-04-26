@@ -14,4 +14,7 @@ public interface CommunicationChannel {
     @Output
     MessageChannel table();
 
+    @Output
+    MessageChannel event();
+
 }

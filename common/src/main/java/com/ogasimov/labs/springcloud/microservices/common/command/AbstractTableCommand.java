@@ -1,9 +1,9 @@
-package com.ogasimov.labs.springcloud.microservices.common;
+package com.ogasimov.labs.springcloud.microservices.common.command;
 
-public abstract class AbstractBillCommand {
+public abstract class AbstractTableCommand {
     private Integer tableId;
 
-    public AbstractBillCommand(Integer tableId) {
+    public AbstractTableCommand(Integer tableId) {
         this.tableId = tableId;
     }
 
@@ -20,7 +20,7 @@ public abstract class AbstractBillCommand {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AbstractBillCommand that = (AbstractBillCommand) o;
+        AbstractTableCommand that = (AbstractTableCommand) o;
 
         return tableId != null ? tableId.equals(that.tableId) : that.tableId == null;
     }

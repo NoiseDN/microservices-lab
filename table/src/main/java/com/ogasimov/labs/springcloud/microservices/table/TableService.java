@@ -1,7 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.table;
 
-import com.ogasimov.labs.springcloud.microservices.common.AbstractTableCommand;
-import com.ogasimov.labs.springcloud.microservices.common.FreeTableCommand;
+import com.ogasimov.labs.springcloud.microservices.common.command.AbstractTableCommand;
+import com.ogasimov.labs.springcloud.microservices.common.command.FreeTableCommand;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,9 +13,13 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Transactional
+@Slf4j
 public class TableService {
+
     @Autowired
     private TableRepository tableRepository;
 
@@ -41,10 +45,10 @@ public class TableService {
     public void updateTable(Integer id, boolean isFree) {
         Table table = tableRepository.findOne(id);
         if (table == null) {
-            throw  new EntityNotFoundException("Table not found");
+            throw new EntityNotFoundException("Table not found");
         }
         table.setFree(isFree);
         tableRepository.save(table);
+        log.info("Table {} is now {}", id, isFree ? "free" : "occupied");
     }
-
 }

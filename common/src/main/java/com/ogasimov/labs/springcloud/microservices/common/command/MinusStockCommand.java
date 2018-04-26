@@ -1,4 +1,4 @@
-package com.ogasimov.labs.springcloud.microservices.common;
+package com.ogasimov.labs.springcloud.microservices.common.command;
 
 import java.util.List;
 

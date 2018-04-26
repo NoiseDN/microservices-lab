@@ -1,12 +1,11 @@
-package com.ogasimov.labs.springcloud.microservices.common;
+package com.ogasimov.labs.springcloud.microservices.common.command;
 
 import java.util.List;
 
-public class CreateOrderCommand extends AbstractOrderCommand {
+public abstract class AbstractStockCommand {
     private List<Integer> menuItems;
 
-    public CreateOrderCommand(Integer tableId, List<Integer> menuItems) {
-        super(tableId);
+    public AbstractStockCommand(List<Integer> menuItems) {
         this.menuItems = menuItems;
     }
 
@@ -22,25 +21,21 @@ public class CreateOrderCommand extends AbstractOrderCommand {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
 
-        CreateOrderCommand that = (CreateOrderCommand) o;
+        AbstractStockCommand that = (AbstractStockCommand) o;
 
         return menuItems != null ? menuItems.equals(that.menuItems) : that.menuItems == null;
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (menuItems != null ? menuItems.hashCode() : 0);
-        return result;
+        return menuItems != null ? menuItems.hashCode() : 0;
     }
 
     @Override
     public String toString() {
-        return "CreateOrderCommand{" +
-                "tableId=" + getTableId() +
-                ", menuItems=" + menuItems +
+        return this.getClass().getSimpleName() + "{" +
+                "menuItems=" + menuItems +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.ogasimov.labs.springcloud.microservices.common;
+package com.ogasimov.labs.springcloud.microservices.common.command;
 
 public class CreateBillCommand extends AbstractBillCommand {
     private Integer orderId;

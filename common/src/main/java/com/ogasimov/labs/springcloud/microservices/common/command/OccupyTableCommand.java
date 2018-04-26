@@ -1,4 +1,4 @@
-package com.ogasimov.labs.springcloud.microservices.common;
+package com.ogasimov.labs.springcloud.microservices.common.command;
 
 public class OccupyTableCommand extends AbstractTableCommand {
     public OccupyTableCommand(Integer tableId) {
