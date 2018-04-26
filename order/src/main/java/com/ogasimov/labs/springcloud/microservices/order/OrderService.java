@@ -27,11 +27,11 @@ public class OrderService {
     @Autowired
     private CommunicationChannel output;
 
-    public void publish(AbstractStockCommand command) {
+    private void publish(AbstractStockCommand command) {
         output.stock().send(MessageBuilder.withPayload(command).build());
     }
 
-    public void publish(AbstractBillCommand command) {
+    private void publish(AbstractBillCommand command) {
         output.bill().send(MessageBuilder.withPayload(command).build());
     }
 
