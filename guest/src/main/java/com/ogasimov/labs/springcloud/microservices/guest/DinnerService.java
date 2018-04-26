@@ -35,21 +35,15 @@ public class DinnerService {
     private Random random = new Random();
 
     private void publish(AbstractTableCommand command) {
-        if (command instanceof OccupyTableCommand) {
-            output.table().send(MessageBuilder.withPayload(command).build());
-        }
+        output.table().send(MessageBuilder.withPayload(command).build());
     }
 
     private void publish(AbstractOrderCommand command) {
-        if (command instanceof CreateOrderCommand) {
-            output.order().send(MessageBuilder.withPayload(command).build());
-        }
+        output.order().send(MessageBuilder.withPayload(command).build());
     }
 
     private void publish(AbstractBillCommand command) {
-        if (command instanceof PayBillCommand) {
-            output.bill().send(MessageBuilder.withPayload(command).build());
-        }
+        output.bill().send(MessageBuilder.withPayload(command).build());
     }
 
     public Integer startDinner(List<Integer> menuItems) {
